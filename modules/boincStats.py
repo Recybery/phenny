@@ -5,6 +5,5 @@ def boincStatus(phenny, input):
 	phial.close()
 	for line in lines:
 		phenny.say(line)
-	phenny.say(''.join(lines))
 boincStatus.commands = ['boinc']
 boincStatus.priority = 'medium'
