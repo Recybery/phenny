@@ -62,9 +62,30 @@ def TextToMorse(a):
 		B+=D[a[i]]+"/"
 		
 	return B
-
+def getKey(a):
+	for i in D.keys():
+		if D[i]==str(a):
+			return i
+	return -1
+			
+def MorseToText(a):
+	B=""
+	try:
+		F=a.split("/")
+	except AttributeError:
+		pass	
+	for i in F:
+		c= getKey(i)
+		if c!=-1:
+				B+=c
+	return B
 
 def morser(phenny, input):
 	phenny.say(TextToMorse(input.group(2)))
 morser.commands = ['2morse']
 morser.priority = 'medium'
+
+def morse(phenny, input):
+	phenny.say(MorseToText(input.group(2)))
+morse.commands = ['2text']
+morse.priority= 'medium'
