@@ -12,7 +12,7 @@ import os
 
 
 def f_log(phenny, input):
-	phial = open('../%s_%s_irc.log'%tuple([datetime.utcnow().month, datetime.utcnow().year]), 'a')
+	phial = open('%s_%s_irc.log'%tuple([datetime.utcnow().month, datetime.utcnow().year]), 'a')
 #	print '%s - %s - %s: %s' % (datetime.utcnow().strftime('%m-%d-%Y %H:%M:%S'), input.sender, input.nick, input)	
 	phial.write( '%s - %s - %s: %s\n' % (datetime.utcnow().strftime('%m-%d-%Y %H:%M:%S'), input.sender, input.nick, input))
 	phial.close()
